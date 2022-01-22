@@ -1,0 +1,11 @@
+import datetime
+from dateutil.relativedelta import relativedelta
+
+def new_cal(a,b,c=1):
+    ts = datetime.datetime(a,b,1) + relativedelta(months=2)
+    ts = ts.strftime('%Y-%m')
+    return ts
+    
+df['new_cal'] = df.apply(lambda x: new_cal(x['year'],x['month']), axis=1)
+df
+
