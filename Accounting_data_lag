@@ -9,3 +9,6 @@ def new_cal(a,b,c=1):
 df['new_cal'] = df.apply(lambda x: new_cal(x['year'],x['month']), axis=1)
 df
 
+# 추가 한줄로 하는법
+
+data['date_str'] = pd.to_datetime(data['year'].astype('str') + '-' + data['month'].astype('str'), format='%Y-%m') + pd.DateOffset(months=2)
